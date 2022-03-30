@@ -123,7 +123,7 @@ class employee {
     void getempdetails(){};
 
 }
-
+/////
 class passengers
 {
     int pssn_id;
@@ -134,6 +134,7 @@ class passengers
     int pssn_phn_no;
     String pssn_govtid_type;
     String pssn_govtid_info;
+    
     passengers(Integer pssn_id,String pssn_name,int pssn_age,
     String pssn_gender,
     String pssn_address)
@@ -144,12 +145,9 @@ class passengers
         this.pssn_gender=pssn_gender;
         this.pssn_address = pssn_address;
     }
-    passengers()
-    {
+    passengers(){}
 
-    }
-
-     passengers(Integer pssn_id,String pssn_name,int pssn_age,
+    passengers(Integer pssn_id,String pssn_name,int pssn_age,
     String pssn_gender,
     String pssn_address,
     int pssn_phn_no,
@@ -161,6 +159,19 @@ class passengers
      this.pssn_govtid_info=pssn_govtid_info;
     // this.pssn_address = pssn_address;
     };
+
+    public static void pssn_info() {
+        System.out.println(" ");
+    }
+    public static void pssn_info(int a) {
+        System.out.println(" ");
+    }
+
+    static class Inner{  
+        void msg(){System.out.println("Nested\n ");}  
+       }  
+
+
 }
 
 class journey
@@ -176,12 +187,17 @@ class journey
 }
 class main
 {
+    static {
+        System.out.println("\n Welcome to Indian Railways");
+    }
 public static void main(String[] args) 
     {
-        System.out.println("\n Hello \n");
+        System.out.println("\n Select option\n\n1.User\n\n2.Train\n\n3.Routes\n\n4.Exit\n");
         
         passengers passengers1=new passengers(1,"Peter",21,"male","brooklyn",23456562,"liscence","BR12547");
+        
         passengers passengers2=passengers1;
+        
         passengers passengers3 =new passengers();
         passengers3.pssn_id=passengers2.pssn_id;
         passengers3.pssn_age=passengers2.pssn_age;
@@ -193,7 +209,14 @@ public static void main(String[] args)
         route a=new route();
         train q=new train();
 
+        passengers.pssn_info();
+        passengers.pssn_info(10);
+
+        passengers.Inner obj=new passengers.Inner();  
+        obj.msg();  
+
     }
+    
 }
 
 
