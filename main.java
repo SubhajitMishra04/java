@@ -9,7 +9,7 @@ class user
     int phone_no;
   
    void getuserinfo(){};
-
+   
 }
 
 class admin 
@@ -134,6 +134,20 @@ class passengers
     int pssn_phn_no;
     String pssn_govtid_type;
     String pssn_govtid_info;
+    passengers(Integer pssn_id,String pssn_name,int pssn_age,
+    String pssn_gender,
+    String pssn_address)
+    {
+        this.pssn_id=pssn_id;
+        this.pssn_name=pssn_name;
+        this.pssn_age=pssn_age;
+        this.pssn_gender=pssn_gender;
+        this.pssn_address = pssn_address;
+    }
+    passengers()
+    {
+
+    }
 
      passengers(Integer pssn_id,String pssn_name,int pssn_age,
     String pssn_gender,
@@ -141,15 +155,11 @@ class passengers
     int pssn_phn_no,
     String pssn_govtid_type,
     String pssn_govtid_info ){
-        this.pssn_id=pssn_id;
-        this.pssn_name=pssn_name;
-        this.pssn_age=pssn_age;
-        this.pssn_gender=pssn_gender;
-     this.pssn_address = pssn_address;
+     this(pssn_id,pssn_name,pssn_age,pssn_gender,pssn_address);
      this.pssn_phn_no=pssn_phn_no;
      this.pssn_govtid_type=pssn_govtid_type;
      this.pssn_govtid_info=pssn_govtid_info;
-
+    // this.pssn_address = pssn_address;
     };
 }
 
@@ -170,8 +180,14 @@ public static void main(String[] args)
     {
         System.out.println("\n Hello \n");
         
-        passengers[] passengers={new passengers(1,"Peter",21,"male","brooklyn",23456562,"liscence","BR12547")};
-        
+        passengers passengers1=new passengers(1,"Peter",21,"male","brooklyn",23456562,"liscence","BR12547");
+        passengers passengers2=passengers1;
+        passengers passengers3 =new passengers();
+        passengers3.pssn_id=passengers2.pssn_id;
+        passengers3.pssn_age=passengers2.pssn_age;
+        passengers3.pssn_name=passengers2.pssn_name;
+        passengers3.pssn_gender=passengers2.pssn_gender;
+        passengers3.pssn_address=passengers2.pssn_address;
         payment d=new payment();
         journey j=new journey();
         route a=new route();
